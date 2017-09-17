@@ -14,7 +14,6 @@ vim-split-line gives the `:SplitLine` command. Without leaving normal
 mode it:
 
   - Splits the line under the cursor
-  - Deletes any trailing whitespace
   - Auto-indents new line
 
 ## Installation
