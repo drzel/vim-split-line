@@ -1,6 +1,6 @@
 " vim-split-line
 " Author: Sheldon Johnson
-" Version: 0.1
+" Version: 0.0.1
 
 if exists('g:loaded_split_line') || &compatible
   finish
