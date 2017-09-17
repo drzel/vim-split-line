@@ -14,6 +14,8 @@ function! SplitLine()
   let l:cnum =  col('.')
 
   let l:first_line = l:line[0:(l:cnum - 2)]
+  let l:first_line = substitute(l:first_line, '\s\+$', '', '')
+
   let l:second_line = l:line[(l:cnum - 1):-1]
 
   call setline(l:lnum, l:first_line)
