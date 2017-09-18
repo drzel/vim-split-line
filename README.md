@@ -5,7 +5,7 @@ Without exiting normal mode, joining two lines is easy: <kbd>J</kbd>
 But splitting and auto-indenting a line is a little awkward:
 
 | Context                                       | Keyboard                                                               |
-| ----------------------------------------------|----------------------------------------------------------------------- |
+| --------------------------------------------- | ---------------------------------------------------------------------- |
 | Splitting on cursor                           | <kbd>i</kbd> <kbd>Enter</kbd> <kbd>Esc</kbd>                           |
 | Splitting on one char of whitespace           | <kbd>r</kbd> <kbd>Enter</kbd>                                          |
 | Splitting on more than one char of whitespace | <kbd>c</kbd> <kbd>i</kbd> <kbd>w</kbd> <kbd>Enter</kbd> <kbd>Esc</kbd> | 
@@ -29,3 +29,13 @@ nnoremap S :SplitLine<CR>
 
 I use <kbd>S</kbd> because the default behaviour is almost identical to
 <kbd>c</kbd> <kbd>c</kbd>, and it has a nice symmetry with <kbd>J</kbd>.
+
+
+## Alternatives
+
+Adding the following to your vimrc will also work, though it prints to the
+command line, and will override the current pattern in the `/` register.
+
+```vim
+nnoremap S :keeppatterns substitute/\s*\%#\s*/\r/e <bar> normal! ==<CR>
+```
