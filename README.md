@@ -33,8 +33,7 @@ I use <kbd>S</kbd> because the default behaviour is almost identical to
 
 ## Alternatives
 
-Adding the following to your vimrc will also work, though it prints to the
-command line, and will override the current pattern in the `/` register.
+You don't actually need this plugin, the below also works:
 
 ```vim
 nnoremap S :keeppatterns substitute/\s*\%#\s*/\r/e <bar> normal! ==<CR>
