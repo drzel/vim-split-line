@@ -1,17 +1,7 @@
-" vim-split-line
-" Author: Sheldon Johnson
-" Version: 0.0.1
-
-if exists('g:loaded_split_line') || &compatible
-  finish
-endif
-
-let g:loaded_split_line = 1
-
-function! SplitLine()
+function! splitline#SplitLine() abort
   let l:line = getline('.')
   let l:lnum = line('.')
-  let l:cnum =  col('.')
+  let l:cnum = col('.')
 
   let l:first_line = l:line[0:(l:cnum - 2)]
   let l:first_line = substitute(l:first_line, '\s\+$', '', '')
@@ -24,5 +14,3 @@ function! SplitLine()
   call cursor(l:lnum + 1, 1)
   normal! ==
 endfunction
-
-command! SplitLine call SplitLine()
